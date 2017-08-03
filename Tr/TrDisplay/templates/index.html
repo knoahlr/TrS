@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% block content %}
+<h1>Tr Home</h1>
+
+  <p>Welcome to <em> the Tr Handler</em> designed for easy TR tracking</p>
+
+<h2>Dynamic content</h2>
+
+  <p>These are the Trs in our database:</p>
+  <table class="table table-striped">
+    {% for Tr in object_list %}
+    <tr>
+      <td id=Tables  ><a href="{{ Tr.get_absolute_url }}"> {{ Tr.Tr_NO }}</a> </td>
+      <td id=Tables  >  {{ Tr.FromTeam }}  </td>
+      <td id=Tables  >  {{ Tr.ToTeam }}  </td>
+      <td id=Tables  >  {{ Tr.Prior_Int }} </td>
+      <td id=Tables  >  {{ Tr.owner }} </td>
+      <td id=Tables  >  {{ Tr.comments }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}
