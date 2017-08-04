@@ -1,0 +1,15 @@
+{% comment %} {% extends "base_generic.html" %} {% endcomment %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
+
+{% block content %}
+
+<form action="" method="post">{% csrf_token %}
+    {% if TrObject %}
+    <li> {{ TrObject.Tr_NO }} </li>
+    <input type="submit" value="Update" />
+    {% endif %}
+</form>
+
+{% endblock %}

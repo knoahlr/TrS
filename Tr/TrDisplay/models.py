@@ -1,6 +1,8 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django  import forms
+from django.core.urlresolvers import reverse
 
 # Create your models here.
 class TrClass(models.Model):
@@ -12,3 +14,12 @@ class TrClass(models.Model):
     Pub_date = models.DateTimeField(' date published ')
     owner = models.CharField(max_length=200, default='Not assigned')
     comments = models.CharField(max_length=200, default = 'Comments')
+
+
+    def TrUpdater(self):
+        return reverse('data', args=[self.Tr_NO])
+
+
+# class TrForms(forms.ModelForm):
+#     model = TrClass
+#     fields = ['Prior_Int', 'owner', 'comments' ]
