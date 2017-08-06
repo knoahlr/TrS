@@ -28,3 +28,11 @@ class TrUpdate(UpdateView):
         TrQuery = TrClass.objects.filter(Tr_NO=TrNO)
         return TrQuery.get()
 
+    # def post(self, request, **kwargs):
+
+    #     request.POST = request.POST.copy()
+    #     print(request.POST)
+    #     print(self.kwargs)
+    #     return super(TrUpdate, self).post(request, **kwargs)
+
+
