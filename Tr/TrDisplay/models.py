@@ -20,6 +20,8 @@ class TrClass(models.Model):
         return reverse('data', args=[self.Tr_NO])
 
 
-# class TrForms(forms.ModelForm):
-#     model = TrClass
-#     fields = ['Prior_Int', 'owner', 'comments' ]
+class TrForms(forms.ModelForm):
+    class Meta:
+        model = TrClass
+        widget = forms.TextInput(attrs={'class': 'special'})
+        fields = ['Prior_Int', 'owner', 'comments' ]

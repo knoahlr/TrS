@@ -1,15 +1,24 @@
-{% comment %} {% extends "base_generic.html" %} {% endcomment %}
+ {% extends "base_generic.html" %} 
 
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
 
 {% block content %}
 
-<form action="" method="post">{% csrf_token %}
-    {% if TrObject %}
-    <li> {{ TrObject.Tr_NO }} </li>
-    <input type="submit" value="Update" />
-    {% endif %}
+{% if TrObject %}
+
+<h3> Tr Number:   {{ TrObject.Tr_NO }}</h3>
+<h3>From Team:   {{ TrObject.FromTeam }}</h3>
+<h3>Publication Date:   {{ TrObject.Pub_date }} </h3>
+
+<form action="" method="post" class="form-inline">
+    {% csrf_token %}
+    <table>
+    {{ form.as_p}}
+    </table>
+    <input type="submit" value="Submit" />
 </form>
+
+{% endif %}
 
 {% endblock %}
