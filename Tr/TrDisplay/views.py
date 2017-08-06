@@ -1,9 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import ListView
-from .models import TrClass
+from .models import TrClass, TrForms
 
 from django.views.generic.edit import UpdateView
-
 
 def index(request):
     Trs = TrClass.objects.all()
@@ -16,11 +15,11 @@ class tableView(ListView):
     template_name = 'index.html'
 
 class TrUpdate(UpdateView):
-
+    
+    form_class = TrForms
     model = TrClass
     TrNO = None
     template_name = 'data.html'
-    fields = ['Prior_Int', 'owner', 'comments' ]
     context_object_name = 'TrObject'
     
     def get_object(self):

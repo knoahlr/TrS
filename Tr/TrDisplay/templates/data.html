@@ -1,15 +1,26 @@
-{% comment %} {% extends "base_generic.html" %} {% endcomment %}
+ {% extends "base_generic.html" %} 
 
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
 
 {% block content %}
 
-<form action="" method="post">{% csrf_token %}
-    {% if TrObject %}
-    <li> {{ TrObject.Tr_NO }} </li>
-    <input type="submit" value="Update" />
-    {% endif %}
+{% if TrObject %}
+
+{% comment %} <ul class="list-group ticketView">
+    <li class="list-group-item ticketView"><span class="badge pull-left">Tr Number</span>{{ TrObject.Tr_NO }}</li>
+    <li class="list-group-item ticketView"><span class="badge pull-left">From Team</span>{{ TrObject.FromTeam }}</li>
+    <li class="list-group-item ticketView"><span class="badge pull-left">To Team</span>{{ TrObject.Pub_date }}</li>    
+</ul> {% endcomment %}
+
+<form action="" method="post" class="form-inline" style = 'margin-top: 30px;'>
+    {% csrf_token %}
+    <table>
+    {{ form.as_p}}
+    </table>
+    <input type="submit" value="Submit" />
 </form>
+
+{% endif %}
 
 {% endblock %}
