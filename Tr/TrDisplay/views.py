@@ -15,13 +15,13 @@ class tableView(ListView):
     template_name = 'index.html'
 
 class TrUpdate(UpdateView):
-    
+
     form_class = TrForms
     model = TrClass
     TrNO = None
     template_name = 'data.html'
     context_object_name = 'TrObject'
-    
+
     def get_object(self):
 
         TrNO = self.kwargs['pk']
