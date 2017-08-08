@@ -12,7 +12,10 @@ application = get_wsgi_application()
 from TrDisplay.models import TrClass
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     
+=======
+>>>>>>> efe4ad104ff3535595cc075654c5eceef38656d4
     Tr = TrClass()
     EmailData = open('/mnt/c/Users/knoah/Desktop/EmailEx.txt', 'r').read()
     TR_NUMB = re.search('TR NUMBER:\s+([0-9]+)', EmailData).group(1)
