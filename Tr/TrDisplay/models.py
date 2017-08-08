@@ -21,8 +21,12 @@ class TrClass(models.Model):
 
 
 class TrForms(forms.ModelForm):
+    Pub_date = forms.DateTimeField(' date published ', widget=forms.TextInput(attrs={'disabled':'True'}))
+
     class Meta:
         model = TrClass
-        widget = forms.TextInput(attrs={'class': 'special'})
+        #
         fields = '__all__'
-        labels = {'FromTeam':'from team', 'ToTeam':'To team'}
+        #labels = {'FromTeam':'from team', 'ToTeam':'To team'}
+        # fields = ['Tr_NO', 'FromTeam', 'ToTeam', 'Prior_Int', 'Pub_date', 'owner', 'comments']
+        # fields['Pub_date'].widget.attrs['readonly'] = True
