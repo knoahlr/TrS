@@ -13,6 +13,6 @@ from sys import path
 from django.core.wsgi import get_wsgi_application
 
 path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "Tr.settings")
+os.environ["DJANGO_SETTINGS_MODULE"] = "{{ project_name }}.settings"
 
 application = get_wsgi_application()
