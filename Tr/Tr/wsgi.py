@@ -20,7 +20,7 @@ from django.core.wsgi import get_wsgi_application
 #                         ('Content-Length', str(len(output)))]
 #     start_response(status, response_headers)
 
-    return [output]
+#     return [output]
 path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 os.environ["DJANGO_SETTINGS_MODULE"] = "TrDisplay.settings"
 

@@ -1,0 +1,20 @@
+ {% extends "TrDisplay/base_generic.html" %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% block content %}
+
+{% if TrObject %}
+
+<form action="" method="post" class="form-inline" style = 'margin-top: 30px;'>
+    {% csrf_token %}
+    <table>
+    {{ form.as_p}}
+    </table>
+    <input type="submit" value="Submit" />
+</form>
+
+{% endif %}
+
+{% endblock %}

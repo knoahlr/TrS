@@ -21,7 +21,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+
     url(r'^admin/', admin.site.urls),
-     url(r'^TrDisplay/', include('TrDisplay.urls')),
-    url(r'^$', RedirectView.as_view(url='/TrDisplay/', permanent=True))
+    url(r'^TrDisplay/', include('TrDisplay.urls')),
+    url(r'^bypass/', include('ByPass.urls')),
+    url(r'^$', RedirectView.as_view(url='/TrDisplay/', permanent=True)),
+
 ]

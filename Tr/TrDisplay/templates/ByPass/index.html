@@ -1,0 +1,33 @@
+{% extends "ByPass/base_generic.html" %}
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% block content %}
+<h1>ByPass Home</h1>
+
+  <p class="lead" >Welcome to <em> the ByPass Handler</em> designed for easy Bypass tracking</p>
+
+<h2 class="display-2">All ByPass requests</h2>
+<p class="lead" > Table of all ByPass requests retrieved from mailing list</p>
+  <table class="table table-striped">
+    <tr>
+      <th>CommitNO</th>
+      <th>Claimant</th>
+      <th>Gerrit Link</th>
+      <th>Published</th>
+
+
+    </tr>
+    {% for ByPass in object_list %}
+    <tr>
+      <td id=Tables  ><a href="{{ ByPass.BypassUpdater }}"> {{ ByPass.CommitNO }}</a> </td>
+      <td id=Tables  >  {{ ByPass.ClaimantName }} </td>
+      <td id=Tables  >  {{ ByPass.GerritLink }}  </td>
+      <td id=Tables  >  {{ ByPass.Pub_date }}  </td>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}
